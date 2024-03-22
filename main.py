@@ -11,7 +11,7 @@ class SystemParameters(ft.Text):
 
     def did_mount(self):
         self.running = True
-        self.page.run_task(self.update_parameters)
+        self.page.run_task(self.update_parameters_first_table)
         self.page.run_task(self.update_parameters_second_table)
         self.page.run_task(self.update_parameters_thirty_table)
         self.page.run_task(self.update_parameters_fourth_table)
@@ -19,7 +19,7 @@ class SystemParameters(ft.Text):
     def will_unmount(self):
         self.running = False
 
-    async def update_parameters(self):
+    async def update_parameters_first_table(self):
         while self.running:
             if self.parameter_number == 'cell_1':
                 self.value = f"{psutil.cpu_percent(interval=1)} %"
@@ -96,6 +96,7 @@ class SystemParameters(ft.Text):
 
 
 def main(page: ft.Page):
+    page.title = "System monitor"
     page.add(
         ft.DataTable(
             width=1700,
