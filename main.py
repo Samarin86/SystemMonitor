@@ -3,6 +3,9 @@ import parameters
 
 
 def main(page: ft.Page):
+    """
+    A function that adds multiple DataTables to a page, each displaying different system monitoring metrics.
+    """
     page.title = "System monitor"
     page.add(
         ft.DataTable(
@@ -27,7 +30,8 @@ def main(page: ft.Page):
                 ft.DataColumn(ft.Text("CPU cores")),
                 ft.DataColumn(ft.Text("CPU threads")),
                 ft.DataColumn(ft.Text("Average system \nload in 5 minutes")),
-                ft.DataColumn(ft.Text("User mode \noperation time"), numeric=False),
+                ft.DataColumn(
+                    ft.Text("User mode \noperation time"), numeric=False),
             ],
             rows=[
                 ft.DataRow(
@@ -66,7 +70,8 @@ def main(page: ft.Page):
             rows=[
                 ft.DataRow(
                     cells=[
-                        ft.DataCell(parameters.SystemParameters('cell_cpu_core')),
+                        ft.DataCell(
+                            parameters.SystemParameters('cell_cpu_core')),
                     ],
                 ),
             ],
