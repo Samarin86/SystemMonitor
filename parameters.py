@@ -134,7 +134,7 @@ class SystemParameters(ft.Text):
             None
         """
         while self.running:
-            print(self.parameter_number)
+            # print(self.parameter_number)
             if self.parameter_number == 'cell_13':
                 self.value = f"{psutil.cpu_stats()[0]}"
                 self.update()
