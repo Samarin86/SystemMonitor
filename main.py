@@ -6,6 +6,7 @@ def main(page: ft.Page):
     """
     A function that adds multiple DataTables to a page, each displaying different system monitoring metrics.
     """
+    # the first table "CPU"
     page.title = "System monitor"
     page.add(
         ft.DataTable(

@@ -6,6 +6,12 @@ from psutil._common import bytes2human
 
 class SystemParameters(ft.Text):
     def __init__(self, parameter_number):
+        """
+        Initialize the class with the given parameter.
+
+        Parameters:
+            parameter_number (int): The number parameter to initialize the class with.
+        """
         super().__init__()
         self.parameter_number = parameter_number
 
