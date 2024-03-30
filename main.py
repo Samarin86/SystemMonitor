@@ -7,6 +7,8 @@ def main(page: ft.Page):
     A function that adds multiple DataTables to a page, each displaying different system monitoring metrics.
     """
     # the first table "CPU"
+    page.window_bgcolor = ft.colors.TRANSPARENT
+    page.bgcolor = ft.colors.TRANSPARENT
     page.title = "System monitor"
     page.add(
         ft.DataTable(
